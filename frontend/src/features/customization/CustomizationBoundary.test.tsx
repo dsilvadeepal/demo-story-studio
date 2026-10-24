@@ -150,7 +150,7 @@ it('saves the exact entered preference through confirmation before remote save',
  vi.mocked(memories.propose).mockResolvedValue(item);vi.mocked(memories.confirm).mockResolvedValue({...item,status:'confirmed'});vi.mocked(memories.save).mockResolvedValue({...item,status:'saved'});
  render(<CustomizationBoundary domain="sales" active={active} catalog={catalog} onActivated={async()=>{}}>{()=>null}</CustomizationBoundary>);
  fireEvent.click(screen.getByText('Demo memory'));
- fireEvent.change(screen.getByLabelText('Preference',{exact:true}),{target:{value:'Use customer-friendly HVAC terminology.'}});
+ fireEvent.change(screen.getByLabelText('Remember for next time',{exact:true}),{target:{value:'Use customer-friendly HVAC terminology.'}});
  fireEvent.click(screen.getByRole('button',{name:'Save preference'}));
  await waitFor(()=>expect(memories.save).toHaveBeenCalledWith('preference'));
  expect(memories.confirm).toHaveBeenCalledWith(item);

@@ -8,6 +8,7 @@ it('displays exact wording and scope before confirming; unknown deletion is not 
  const props={items:[item],usedIds:[],onConfirm:confirm,onIgnore:vi.fn(),onUpdate:vi.fn(),onForget:forget,busy:false};
  const view=render(<MemoryPanel {...props}/>);
  expect(screen.getByText(item.draft.text,{selector:'blockquote'})).toBeTruthy();expect(screen.getByText(/leadership.*quarterly review/)).toBeTruthy();expect(confirm).not.toHaveBeenCalled();
+ fireEvent.click(screen.getByText('Manage',{exact:true}));
  fireEvent.click(screen.getByRole('button',{name:'Confirm & save'}));expect(confirm).toHaveBeenCalledWith(item);
  view.rerender(<MemoryPanel {...props} items={[{...item,status:'deletion-pending'}]}/>);
  expect(screen.getByText(/Deletion pending/)).toBeTruthy();expect(screen.queryByText('Deleted')).toBeNull();
@@ -15,7 +16,8 @@ it('displays exact wording and scope before confirming; unknown deletion is not 
 it('marks used memory and separates ignore and proposed updates from saving',()=>{
  const update=vi.fn(),ignore=vi.fn(),confirm=vi.fn();
  render(<MemoryPanel items={[{...item,status:'saved'}]} usedIds={['memory']} onConfirm={confirm} onIgnore={ignore} onUpdate={update} onForget={vi.fn()} busy={false}/>);
- expect(screen.getByText('Used in this conversation')).toBeTruthy();
+ expect(screen.getByText('Saved · Used in this conversation')).toBeTruthy();
+ fireEvent.click(screen.getByText('Manage',{exact:true}));
  fireEvent.click(screen.getByRole('button',{name:'Ignore for this conversation'}));expect(ignore).toHaveBeenCalledWith('memory');
  fireEvent.click(screen.getByText('Edit',{exact:true}));
  fireEvent.change(screen.getByLabelText('Updated wording'),{target:{value:'Focus on open opportunities for leadership demos.'}});

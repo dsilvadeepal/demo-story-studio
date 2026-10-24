@@ -48,3 +48,6 @@
 .customization-bar .revision-history ol{max-height:260px;overflow-y:auto}
 .customization-bar>p,.customization-bar>div:has(>label){flex-basis:100%}
 @media(max-width:600px){.customization-bar{margin:0 16px;gap:6px 10px}.customization-bar>div:first-child{flex-basis:100%}}
+
+/* Keep saved guidance readable; reveal secondary controls on demand. */
+.memory-card > p[role="status"]{margin:0 0 8px;font-size:.85rem}.memory-card blockquote{margin:8px 0 12px;padding:0;background:transparent}.memory-manage>summary{font-size:.85rem;color:var(--muted);cursor:pointer}.memory-card>label:first-child{margin-top:0}

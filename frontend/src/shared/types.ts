@@ -1,0 +1,11 @@
+export type Domain='sales'|'service';
+export type Filters=Record<string,string[]>;
+export type Period={start:string;end:string;field:'created_at'|'close_date'|'closed_date'};
+export type RequestContext={dataset_id:string;semantic_version:'1.0.0';dashboard:Domain;filters:Filters;period?:Period};
+export type QueryRequest=RequestContext&{metric_ids?:string[];dimension?:string};
+export type QueryResponse={dataset_id:string;revision:number;semantic_version:string;as_of_date:string;query_id:string;effective_filters:Filters;period?:Period;warnings:string[];values:Record<string,string|number|null>;previous:Record<string,string|number|null>|null;groups:{key:string|string[];record_ids:string[];values:Record<string,string|number|null>}[];row_count:number};
+export type Manifest={id:string;as_of_date:string;revision:number;semantic_version:'1.0.0';counts:Record<string,number>;presentation?:{industry?:string;page_titles?:Record<string,string>}};
+export type Metric={id:string;label:string;unit:string;definition:string;date_field:string};
+export type Catalog={options:Record<Domain,Record<string,string[]>>;metrics:Record<Domain,Metric[]>;dimensions:Record<Domain,string[]>};
+export type RecordRow=Record<string,string|number|null>;
+export type RecordResponse={rows:RecordRow[];total:number;next_cursor:number|null};

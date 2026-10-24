@@ -1,0 +1,188 @@
+{
+  "domain": "service",
+  "initial_revision": 31,
+  "refined_revision": 32,
+  "run": {
+    "id": "f37a582a-2faf-4e1f-88aa-448e7bfa3d51",
+    "status": "paused"
+  },
+  "actual_changed_fields": {
+    "users.division": 8
+  },
+  "changed_rule_fields": [
+    "divisions"
+  ],
+  "all_other_rules_unchanged": true,
+  "metric_preservation": {
+    "sales": true,
+    "service": true
+  },
+  "integrity_verified": true,
+  "active_revision": 1,
+  "approval_count": 0,
+  "model_tools": [
+    {
+      "tool": "inspect_industry_context",
+      "error": null
+    },
+    {
+      "tool": "propose_industry_adaptation",
+      "error": null
+    },
+    {
+      "tool": "refine_industry_adaptation",
+      "error": "INVALID_REFINEMENT"
+    },
+    {
+      "tool": "request_clarification",
+      "error": null
+    },
+    {
+      "tool": "refine_industry_adaptation",
+      "error": null
+    }
+  ],
+  "refinement_model_calls": 3,
+  "costs": [
+    {
+      "status": "settled",
+      "actual": "0.0002528000",
+      "reserved": "0.0015906000"
+    },
+    {
+      "status": "settled",
+      "actual": "0.0005442000",
+      "reserved": "0.0019890000"
+    },
+    {
+      "status": "settled",
+      "actual": "0.0002136000",
+      "reserved": "0.0013726000"
+    },
+    {
+      "status": "settled",
+      "actual": "0.0002438000",
+      "reserved": "0.0016648000"
+    },
+    {
+      "status": "settled",
+      "actual": "0.0002062000",
+      "reserved": "0.0013852000"
+    }
+  ],
+  "proposal": {
+    "parent_id": "baseline-v1-42-2026-10-21",
+    "selection": {
+      "sort": "amount",
+      "top_n": null,
+      "filters": {},
+      "dashboard": "service",
+      "descending": true,
+      "record_ids": []
+    },
+    "operations": [
+      {
+        "kind": "adapt_industry",
+        "families": [
+          {
+            "source": "Cleaning",
+            "target": "Air Filters"
+          },
+          {
+            "source": "Facilities",
+            "target": "Boilers"
+          },
+          {
+            "source": "Furniture",
+            "target": "Cooling Units"
+          },
+          {
+            "source": "Kitchen",
+            "target": "Ductwork"
+          },
+          {
+            "source": "Office",
+            "target": "Heat Pumps"
+          },
+          {
+            "source": "Packaging",
+            "target": "HVAC Controls"
+          },
+          {
+            "source": "Safety",
+            "target": "Refrigerants"
+          },
+          {
+            "source": "Technology",
+            "target": "Thermostats"
+          }
+        ],
+        "industry": "Commercial HVAC Services",
+        "divisions": [
+          {
+            "source": "Central",
+            "target": "Montr\u00e9al Centre"
+          },
+          {
+            "source": "East",
+            "target": "Longueuil"
+          },
+          {
+            "source": "West",
+            "target": "Saint-Laurent"
+          }
+        ],
+        "case_types": [
+          {
+            "source": "Billing",
+            "target": "Emergency Repair"
+          },
+          {
+            "source": "Order",
+            "target": "Scheduled Maintenance"
+          },
+          {
+            "source": "Product",
+            "target": "System Upgrade"
+          },
+          {
+            "source": "Returns",
+            "target": "Compliance Inspection"
+          },
+          {
+            "source": "Technical",
+            "target": "Performance Audit"
+          }
+        ],
+        "page_titles": {
+          "trend": "HVAC Service Trends",
+          "detail": "HVAC Deal Details",
+          "pipeline": "HVAC Sales Pipeline",
+          "breakdown": "HVAC Service Workload",
+          "executive": "HVAC Sales Overview"
+        },
+        "case_subjects": [
+          {
+            "source": "Delivery question",
+            "target": "Cooling Failure"
+          },
+          {
+            "source": "Product guidance",
+            "target": "Refrigerant Leak"
+          },
+          {
+            "source": "Replacement request",
+            "target": "Thermostat Fault"
+          },
+          {
+            "source": "Setup assistance",
+            "target": "Preventive Maintenance"
+          }
+        ],
+        "company_descriptor": "Commercial Property Group",
+        "opportunity_template": "{family} service agreement {number}"
+      }
+    ],
+    "semantic_version": "1.0.0"
+  }
+}

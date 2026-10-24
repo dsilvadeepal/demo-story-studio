@@ -1,0 +1,16 @@
+import {CustomizationBoundary} from '../features/customization/CustomizationBoundary';
+import {useState,useEffect} from 'react';
+import {api} from '../shared/api';
+import type {Domain,Manifest,Catalog} from '../shared/types';
+import {Studio} from './Studio';
+import {Workspace} from './Workspace';
+export function App(){
+ const [authenticated,setAuthenticated]=useState(false),[checking,setChecking]=useState(true),[password,setPassword]=useState(''),[error,setError]=useState(''),[busy,setBusy]=useState(false);
+ const [domain,setDomain]=useState<Domain|null>(null),[manifest,setManifest]=useState<Manifest>(),[catalog,setCatalog]=useState<Catalog>();
+ useEffect(()=>{api('/session').then(()=>setAuthenticated(true)).catch(()=>{}).finally(()=>setChecking(false));const expired=()=>{setAuthenticated(false);setManifest(undefined);setCatalog(undefined)};window.addEventListener('studio-session-expired',expired);return()=>window.removeEventListener('studio-session-expired',expired)},[]);
+ async function load(){setError('');try{const [m,c]=await Promise.all([api<Manifest>('/v1/dataset'),api<Catalog>('/v1/catalog')]);setManifest(m);setCatalog(c)}catch(e){setError((e as Error).message)}}
+ useEffect(()=>{if(authenticated)void load()},[authenticated]);
+ async function login(e:React.FormEvent){e.preventDefault();setBusy(true);setError('');try{await api('/login',{password});setPassword('');setAuthenticated(true)}catch(e){setError((e as Error).message)}finally{setBusy(false)}}
+ return <><header className="topbar"><a className="brand-home" href="/" aria-label="Demo Story Studio home" onClick={e=>{e.preventDefault();setDomain(null);window.scrollTo(0,0)}}><span className="brand-mark" aria-hidden="true">◇</span><strong>Demo Story Studio</strong></a><span className="topbar-right">Private workspace <i/> Synthetic data {authenticated&&<button onClick={async()=>{await api('/logout',{});setAuthenticated(false);setDomain(null)}}>Sign out</button>}</span></header>
+ {checking?<main className="login"><p>Opening your Studio…</p></main>:!authenticated?<main className="login"><span className="eyebrow">YOUR PRIVATE WORKSPACE</span><h1>Welcome to your Studio.</h1><p>Explore Sales and Service with a connected synthetic dataset.</p><form onSubmit={login}><label>Owner password<input type="password" autoComplete="current-password" value={password} onChange={e=>setPassword(e.target.value)} required/></label><button className="primary" disabled={busy}>{busy?'Signing in…':'Open Studio →'}</button></form>{error&&<p role="alert">{error}</p>}<small>Your local password is stored in .local/owner-password. No source business data is used.</small></main>:!manifest||!catalog?<main className="login"><h1>{error?'Unable to load your dataset':'Connecting your dataset…'}</h1><p role="status">{error||'Reading the baseline and metric catalog.'}</p>{error&&<button onClick={load}>Retry</button>}</main>:domain?<CustomizationBoundary key={domain} domain={domain} active={manifest} catalog={catalog} onActivated={load}>{ctx=><Workspace domain={domain} manifest={ctx.manifest} catalog={ctx.catalog} preview={ctx.manifest.id!==manifest.id} onQuery={ctx.onQuery} review={ctx.review} step={ctx.step} onBack={()=>{setDomain(null);window.scrollTo(0,0)}}/>}</CustomizationBoundary>:<Studio onChoose={d=>{setDomain(d);window.scrollTo(0,0)}}/>}</>;
+}

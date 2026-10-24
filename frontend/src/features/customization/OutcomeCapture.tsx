@@ -1,0 +1,6 @@
+import {useState} from 'react';
+export function OutcomeCapture({onOutcome,onPropose,busy}:{onOutcome:(successful:boolean)=>Promise<void>;onPropose:(text:string)=>Promise<void>;busy:boolean}){
+ const [successful,setSuccessful]=useState(false),[wording,setWording]=useState(''),[error,setError]=useState(''),[pending,setPending]=useState(false);
+ async function record(value:boolean){setPending(true);setError('');try{await onOutcome(value);setSuccessful(value)}catch{setError('Could not record the outcome. Please retry.')}finally{setPending(false)}}
+ return <section className="memory-card"><h3>Did this applied revision work for your demo?</h3><p>Applying data does not save a recipe. Report the outcome, then review reusable wording separately.</p><button disabled={busy||pending} onClick={()=>void record(true)}>Yes, this worked</button><button disabled={busy||pending} onClick={()=>void record(false)}>No, this needs work</button>{error&&<p role="alert">{error}</p>}{successful&&<><label>Reusable recipe wording<textarea maxLength={600} value={wording} onChange={e=>setWording(e.target.value)}/></label><button disabled={busy||wording.trim().length<10} onClick={()=>void onPropose(wording)}>Create recipe draft for review</button></>}</section>;
+}

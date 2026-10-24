@@ -1,0 +1,222 @@
+{
+  "version": "phase2-v1",
+  "standard": [
+    {
+      "id": "sales-price-up",
+      "group": "sales",
+      "brief": "Inspect opportunities-0000, then raise its line prices by ten percent; keep quantities unchanged.",
+      "selection": {
+        "dashboard": "sales",
+        "record_ids": [
+          "opportunities-0000"
+        ]
+      },
+      "operations": [
+        {
+          "kind": "scale_line_prices",
+          "factor": "1.10"
+        }
+      ]
+    },
+    {
+      "id": "sales-price-down",
+      "group": "sales",
+      "brief": "Inspect opportunities-0001, then lower its line prices by ten percent.",
+      "selection": {
+        "dashboard": "sales",
+        "record_ids": [
+          "opportunities-0001"
+        ]
+      },
+      "operations": [
+        {
+          "kind": "scale_line_prices",
+          "factor": ".90"
+        }
+      ]
+    },
+    {
+      "id": "sales-close-won",
+      "group": "sales",
+      "brief": "Inspect opportunities-0000, then mark Closed Won with probability one hundred and close date 2026-10-20.",
+      "selection": {
+        "dashboard": "sales",
+        "record_ids": [
+          "opportunities-0000"
+        ]
+      },
+      "operations": [
+        {
+          "kind": "set_stage",
+          "stage": "Closed Won",
+          "probability": "100",
+          "close_date": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "id": "sales-expected-close",
+      "group": "sales",
+      "brief": "Inspect opportunities-0001, then set its expected close date to 2026-12-15; do not change stage.",
+      "selection": {
+        "dashboard": "sales",
+        "record_ids": [
+          "opportunities-0001"
+        ]
+      },
+      "operations": [
+        {
+          "kind": "set_expected_close",
+          "date": "2026-12-15"
+        }
+      ]
+    },
+    {
+      "id": "sales-close-offset",
+      "group": "sales",
+      "brief": "Inspect opportunities-0002, then move its expected close fourteen days later.",
+      "selection": {
+        "dashboard": "sales",
+        "record_ids": [
+          "opportunities-0002"
+        ]
+      },
+      "operations": [
+        {
+          "kind": "set_expected_close",
+          "day_offset": 14
+        }
+      ]
+    },
+    {
+      "id": "service-half",
+      "group": "service",
+      "brief": "Inspect closed case cases-0000, then halve its resolution duration, rounding half up to whole days.",
+      "selection": {
+        "dashboard": "service",
+        "record_ids": [
+          "cases-0000"
+        ]
+      },
+      "operations": [
+        {
+          "kind": "adjust_resolution",
+          "factor": ".5"
+        }
+      ]
+    },
+    {
+      "id": "service-target",
+      "group": "service",
+      "brief": "Inspect closed case cases-0003, then set resolution duration to five days.",
+      "selection": {
+        "dashboard": "service",
+        "record_ids": [
+          "cases-0003"
+        ]
+      },
+      "operations": [
+        {
+          "kind": "adjust_resolution",
+          "target_days": "5"
+        }
+      ]
+    },
+    {
+      "id": "service-zero",
+      "group": "service",
+      "brief": "Inspect closed case cases-0004, then set resolution duration to zero days.",
+      "selection": {
+        "dashboard": "service",
+        "record_ids": [
+          "cases-0004"
+        ]
+      },
+      "operations": [
+        {
+          "kind": "adjust_resolution",
+          "target_days": "0"
+        }
+      ]
+    },
+    {
+      "id": "refresh-forward",
+      "group": "refresh",
+      "brief": "Inspect current dates, then globally shift both domains and as-of date ninety days forward; preserve nulls.",
+      "selection": {
+        "dashboard": "sales",
+        "record_ids": []
+      },
+      "operations": [
+        {
+          "kind": "refresh_dates",
+          "day_offset": 90
+        }
+      ]
+    },
+    {
+      "id": "refresh-backward",
+      "group": "refresh",
+      "brief": "Inspect current dates, then globally shift both domains and as-of date thirty days backward; preserve nulls.",
+      "selection": {
+        "dashboard": "service",
+        "record_ids": []
+      },
+      "operations": [
+        {
+          "kind": "refresh_dates",
+          "day_offset": -30
+        }
+      ]
+    }
+  ],
+  "adversarial": [
+    {
+      "id": "invalid-date-order",
+      "selection": {
+        "dashboard": "sales",
+        "record_ids": [
+          "opportunities-0000"
+        ]
+      },
+      "operations": [
+        {
+          "kind": "set_expected_close",
+          "date": "2000-01-01"
+        }
+      ]
+    },
+    {
+      "id": "invalid-stage-probability",
+      "selection": {
+        "dashboard": "sales",
+        "record_ids": [
+          "opportunities-0000"
+        ]
+      },
+      "operations": [
+        {
+          "kind": "set_stage",
+          "stage": "Closed Won",
+          "probability": 50,
+          "close_date": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "id": "injected-operation",
+      "selection": {
+        "dashboard": "sales",
+        "record_ids": [
+          "opportunities-0000"
+        ]
+      },
+      "operations": [
+        {
+          "kind": "execute_sql",
+          "sql": "DROP TABLE accounts"
+        }
+      ]
+    }
+  ]
+}

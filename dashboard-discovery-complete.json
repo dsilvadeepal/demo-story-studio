@@ -1,0 +1,377 @@
+{
+  "Sales": {
+    "pages": [
+      {
+        "name": "dca9e2eb-6d59-49ee-834b-1e4d51abcbb5",
+        "widgets": [
+          {
+            "id": "0WmgK000000Hb3XSAS"
+          },
+          {
+            "id": "0WmgK000000Hb3YSAS"
+          },
+          {
+            "id": "0WmgK000000Hb3ZSAS"
+          },
+          {
+            "id": "0WmgK000000Hb3aSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3bSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3cSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3dSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3eSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3fSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3gSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3hSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3iSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3jSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3kSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3lSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3mSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3nSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3oSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3pSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3qSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3rSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3sSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3tSAC"
+          }
+        ]
+      },
+      {
+        "name": "b0b64958-7785-4f3c-b6ff-762b9845f0d3",
+        "widgets": [
+          {
+            "id": "0WmgK000000Hb3BSAS"
+          },
+          {
+            "id": "0WmgK000000Hb3CSAS"
+          },
+          {
+            "id": "0WmgK000000Hb3DSAS"
+          },
+          {
+            "id": "0WmgK000000Hb3ESAS"
+          },
+          {
+            "id": "0WmgK000000Hb3FSAS"
+          },
+          {
+            "id": "0WmgK000000Hb3GSAS"
+          },
+          {
+            "id": "0WmgK000000Hb3HSAS"
+          },
+          {
+            "id": "0WmgK000000Hb3ISAS"
+          },
+          {
+            "id": "0WmgK000000Hb3JSAS"
+          },
+          {
+            "id": "0WmgK000000Hb3KSAS"
+          },
+          {
+            "id": "0WmgK000000Hb3LSAS"
+          },
+          {
+            "id": "0WmgK000000Hb3MSAS"
+          },
+          {
+            "id": "0WmgK000000Hb3NSAS"
+          },
+          {
+            "id": "0WmgK000000Hb3OSAS"
+          },
+          {
+            "id": "0WmgK000000Hb3PSAS"
+          },
+          {
+            "id": "0WmgK000000Hb3QSAS"
+          },
+          {
+            "id": "0WmgK000000Hb3RSAS"
+          },
+          {
+            "id": "0WmgK000000Hb3SSAS"
+          },
+          {
+            "id": "0WmgK000000Hb3TSAS"
+          },
+          {
+            "id": "0WmgK000000Hb3USAS"
+          },
+          {
+            "id": "0WmgK000000Hb3VSAS"
+          },
+          {
+            "id": "0WmgK000000Hb3WSAS"
+          }
+        ]
+      },
+      {
+        "name": "80652e7e-3637-4dc2-88c7-42d1e2da5da6",
+        "widgets": [
+          {
+            "id": "0WmgK000000Hb3uSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3vSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3wSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3xSAC"
+          },
+          {
+            "id": "0WmgK000000Hb3ySAC"
+          },
+          {
+            "id": "0WmgK000000Hb3zSAC"
+          },
+          {
+            "id": "0WmgK000000Hb40SAC"
+          },
+          {
+            "id": "0WmgK000000Hb41SAC"
+          },
+          {
+            "id": "0WmgK000000Hb42SAC"
+          },
+          {
+            "id": "0WmgK000000Hb43SAC"
+          },
+          {
+            "id": "0WmgK000000Hb44SAC"
+          },
+          {
+            "id": "0WmgK000000Hb45SAC"
+          },
+          {
+            "id": "0WmgK000000Hb46SAC"
+          },
+          {
+            "id": "0WmgK000000Hb47SAC"
+          },
+          {
+            "id": "0WmgK000000Hb48SAC"
+          },
+          {
+            "id": "0WmgK000000Hb49SAC"
+          }
+        ]
+      }
+    ]
+  },
+  "Service": {
+    "pages": [
+      {
+        "name": "ae4d6329-48d8-4453-98fb-1b71740f6eae",
+        "widgets": [
+          {
+            "id": "0WmgK000000Hb6PSAS"
+          },
+          {
+            "id": "0WmgK000000Hb6QSAS"
+          },
+          {
+            "id": "0WmgK000000Hb6RSAS"
+          },
+          {
+            "id": "0WmgK000000Hb6SSAS"
+          },
+          {
+            "id": "0WmgK000000Hb6TSAS"
+          },
+          {
+            "id": "0WmgK000000Hb6USAS"
+          },
+          {
+            "id": "0WmgK000000Hb6VSAS"
+          },
+          {
+            "id": "0WmgK000000Hb6WSAS"
+          },
+          {
+            "id": "0WmgK000000Hb6XSAS"
+          },
+          {
+            "id": "0WmgK000000Hb6YSAS"
+          },
+          {
+            "id": "0WmgK000000Hb6ZSAS"
+          },
+          {
+            "id": "0WmgK000000Hb6aSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6bSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6cSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6dSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6eSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6fSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6gSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6hSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6iSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6jSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6kSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6lSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6mSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6nSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6oSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6pSAC"
+          }
+        ]
+      },
+      {
+        "name": "e6bb78db-1502-47cf-b86f-b1dac5f1f2f9",
+        "widgets": [
+          {
+            "id": "0WmgK000000Hb6qSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6rSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6sSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6tSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6uSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6vSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6wSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6xSAC"
+          },
+          {
+            "id": "0WmgK000000Hb6ySAC"
+          },
+          {
+            "id": "0WmgK000000Hb6zSAC"
+          },
+          {
+            "id": "0WmgK000000Hb70SAC"
+          },
+          {
+            "id": "0WmgK000000Hb71SAC"
+          },
+          {
+            "id": "0WmgK000000Hb72SAC"
+          },
+          {
+            "id": "0WmgK000000Hb73SAC"
+          },
+          {
+            "id": "0WmgK000000Hb74SAC"
+          },
+          {
+            "id": "0WmgK000000Hb75SAC"
+          },
+          {
+            "id": "0WmgK000000Hb76SAC"
+          },
+          {
+            "id": "0WmgK000000Hb77SAC"
+          },
+          {
+            "id": "0WmgK000000Hb78SAC"
+          },
+          {
+            "id": "0WmgK000000Hb79SAC"
+          },
+          {
+            "id": "0WmgK000000Hb7ASAS"
+          },
+          {
+            "id": "0WmgK000000Hb7BSAS"
+          },
+          {
+            "id": "0WmgK000000Hb7CSAS"
+          },
+          {
+            "id": "0WmgK000000Hb7DSAS"
+          },
+          {
+            "id": "0WmgK000000Hb7ESAS"
+          },
+          {
+            "id": "0WmgK000000Hb7FSAS"
+          }
+        ]
+      }
+    ]
+  }
+}

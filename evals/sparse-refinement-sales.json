@@ -1,0 +1,167 @@
+{
+  "domain": "sales",
+  "initial_revision": 29,
+  "refined_revision": 30,
+  "run": {
+    "id": "8ed6fc50-d1bf-4268-8c6d-3c6132a6527c",
+    "status": "paused"
+  },
+  "actual_changed_fields": {
+    "opportunities.name": 1200
+  },
+  "changed_rule_fields": [
+    "opportunity_template"
+  ],
+  "all_other_rules_unchanged": true,
+  "metric_preservation": {
+    "sales": true,
+    "service": true
+  },
+  "integrity_verified": true,
+  "active_revision": 1,
+  "approval_count": 0,
+  "model_tools": [
+    {
+      "tool": "refine_industry_adaptation",
+      "error": null
+    },
+    {
+      "tool": "propose_industry_adaptation",
+      "error": null
+    }
+  ],
+  "refinement_model_calls": 1,
+  "costs": [
+    {
+      "status": "settled",
+      "actual": "0.0002582000",
+      "reserved": "0.0016152000"
+    },
+    {
+      "status": "settled",
+      "actual": "0.0005408000",
+      "reserved": "0.0020376000"
+    },
+    {
+      "status": "settled",
+      "actual": "0.0002024000",
+      "reserved": "0.0013848000"
+    }
+  ],
+  "proposal": {
+    "parent_id": "baseline-v1-42-2026-10-21",
+    "selection": {
+      "sort": "amount",
+      "top_n": null,
+      "filters": {},
+      "dashboard": "sales",
+      "descending": true,
+      "record_ids": []
+    },
+    "operations": [
+      {
+        "kind": "adapt_industry",
+        "families": [
+          {
+            "source": "Cleaning",
+            "target": "Solar Panels"
+          },
+          {
+            "source": "Facilities",
+            "target": "Battery Storage"
+          },
+          {
+            "source": "Furniture",
+            "target": "EV Charging Stations"
+          },
+          {
+            "source": "Kitchen",
+            "target": "Solar Inverters"
+          },
+          {
+            "source": "Office",
+            "target": "Energy Management Systems"
+          },
+          {
+            "source": "Packaging",
+            "target": "Mounting Systems"
+          },
+          {
+            "source": "Safety",
+            "target": "Smart Meters"
+          },
+          {
+            "source": "Technology",
+            "target": "Backup Power Systems"
+          }
+        ],
+        "industry": "Renewable Energy",
+        "divisions": [
+          {
+            "source": "Central",
+            "target": "Great Lakes"
+          },
+          {
+            "source": "East",
+            "target": "Atlantic Coast"
+          },
+          {
+            "source": "West",
+            "target": "Pacific Coast"
+          }
+        ],
+        "case_types": [
+          {
+            "source": "Billing",
+            "target": "Energy Incentive"
+          },
+          {
+            "source": "Order",
+            "target": "Deployment Plan"
+          },
+          {
+            "source": "Product",
+            "target": "System Design"
+          },
+          {
+            "source": "Returns",
+            "target": "Decommissioning"
+          },
+          {
+            "source": "Technical",
+            "target": "Grid Integration"
+          }
+        ],
+        "page_titles": {
+          "trend": "Energy Service Trends",
+          "detail": "Energy Deal Details",
+          "pipeline": "Energy Sales Pipeline",
+          "breakdown": "Energy Service Workload",
+          "executive": "Energy Sales Overview"
+        },
+        "case_subjects": [
+          {
+            "source": "Delivery question",
+            "target": "Installation scheduling"
+          },
+          {
+            "source": "Product guidance",
+            "target": "System compatibility review"
+          },
+          {
+            "source": "Replacement request",
+            "target": "Component upgrade path"
+          },
+          {
+            "source": "Setup assistance",
+            "target": "Performance optimization"
+          }
+        ],
+        "company_descriptor": "Commercial Property Group",
+        "opportunity_template": "{family} installation project {number}"
+      }
+    ],
+    "semantic_version": "1.0.0"
+  },
+  "checkpoint_note": "The first live Sales run preceded the generation-qualified tool-message ID fix; its initial inspection result was overwritten in the checkpoint reducer. Three settled model calls and the stored proposals remain. A regression now verifies inspection/proposal/refinement tool messages all survive."
+}

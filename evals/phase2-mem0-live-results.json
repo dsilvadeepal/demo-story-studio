@@ -1,0 +1,17 @@
+{
+  "mode": "live",
+  "provider": "mem0",
+  "save_verified": true,
+  "fresh_process_recall": true,
+  "cross_domain_excluded": true,
+  "memory_id": "0e0ba2d1-5ac6-4346-9391-24969f6a38b2",
+  "update_verified": true,
+  "immediate_local_exclusion": true,
+  "remote_deletion_verified": true,
+  "post_delete_recall_empty": true,
+  "recipe_saved_after_confirmed_outcome": true,
+  "recipe_recalled": true,
+  "recipe_remote_deletion_verified": true,
+  "sdk_version": "2.2.1",
+  "evidence": "Browser exact-text save/update; fresh-process managed API recall and deletion verification; recipe tied to previously applied and verified revision 2."
+}

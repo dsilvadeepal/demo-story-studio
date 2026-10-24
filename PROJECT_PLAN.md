@@ -1,6 +1,6 @@
 # Demo Story Studio — current build plan
 
-Updated October 23, 2026 (America/New_York). Current scope: [product requirements](FOUNDATION_PRD.md). The original extraction/Retail proposal is archived (local working-copy reference; not included in this publication); it is not unfinished work for this build. The detailed phase-two execution ledger (local working-copy reference; not included in this publication) retains earlier task evidence.
+Updated October 23, 2026 (America/New_York). Current scope: [product requirements](FOUNDATION_PRD.md).
 
 ## Completed product foundation
 
@@ -39,7 +39,7 @@ External-org sign-in/connections/deployment, multi-tenant authorization, Retail,
 
 ## Verification record
 
-See [latest refinement acceptance](docs/REFINEMENT_ACCEPTANCE.md), recording guide (kept locally; excluded from this repository), and submission source (local working-copy reference; not included in this publication). Historical test counts in older ledgers are dated snapshots, not current totals. Current revisions and test results are recorded only after verification.
+See [latest refinement acceptance](docs/REFINEMENT_ACCEPTANCE.md) for verified revisions and test results.
 
 Latest verified previews: Sales 29 → 30; Service 31 → 32. Active revision remains 1. Backend 135 passed, final targeted regressions 20 passed, frontend 37 passed, production build passed. Service required a clarification; see the acceptance record rather than treating this as a first-attempt success claim.
 

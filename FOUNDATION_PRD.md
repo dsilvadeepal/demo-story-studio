@@ -1,6 +1,6 @@
 # Demo Story Studio — current product requirements
 
-Updated October 23, 2026 (America/New_York). This is the current product scope, superseding the early Retail/import proposal preserved in the archive (local working-copy reference; not included in this publication). The detailed implementation history is in the phase-two plan (local working-copy reference; not included in this publication).
+Updated October 23, 2026 (America/New_York). This document defines the current product scope.
 
 ## Product outcome
 

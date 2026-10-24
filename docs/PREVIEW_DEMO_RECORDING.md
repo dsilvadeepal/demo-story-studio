@@ -28,7 +28,7 @@ Follow the screen, not a stopwatch. The durations are rehearsal targets, not dea
 
 **Stay here:** the Service dashboard. If a saved preview is selected, click **Current** first. Show the current label and chart briefly.
 
-**Say:** “This is our starting dashboard, using synthetic data. The charts and records are connected, so adapting the story means more than changing the title.”
+**Say:** “Sales and Service are built on nine connected tables of synthetic data. They share customer accounts, so adapting this demo means keeping names and relationships consistent across the data—not just changing a dashboard title.”
 
 **Now click:** **Breakdown**. Open a case with a linked account and point to its customer and owner. Close the record details before continuing.
 

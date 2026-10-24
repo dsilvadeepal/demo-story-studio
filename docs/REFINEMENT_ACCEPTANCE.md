@@ -41,6 +41,6 @@ The Sales live checkpoint exposed reused tool-message IDs after counter reset. T
 
 This is tested bounded refinement, not a universal natural-language correctness guarantee. Use exact existing-label → replacement wording for the recording. Unsupported mapping additions and vague semantic changes can require a fresh brief or clarification. Numeric refinements still use the earlier proposal path. Previous-preview comparison UI state is not reconstructed after a reload; saved revision data persists. Full keyboard/screen-reader/mobile accessibility and unattended provider hard stops remain unverified.
 
-Use [the recording guide](PREVIEW_DEMO_RECORDING.md) and stop at Preview & iterate. External production-instance connection/deployment remains future scope.
+For the demo, stop at Preview & iterate. The recording guide is kept locally and excluded from this repository. External production-instance connection/deployment remains future scope.
 
 Test session ended with the Nebius gate closed and $0.9416784 remaining in the original monitored allowance. Viewing retained previews remains available.

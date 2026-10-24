@@ -12,3 +12,6 @@ dist/
 
 .DS_Store
 *.tsbuildinfo
+
+# Personal recording material stays in the local working project.
+docs/PREVIEW_DEMO_RECORDING.md

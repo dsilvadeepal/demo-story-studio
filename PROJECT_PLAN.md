@@ -33,13 +33,13 @@ Updated October 23, 2026 (America/New_York). Current scope: [product requirement
 - [ ] Owner hands-on acceptance and video recording, stopping at Preview & iterate.
 - [ ] Optional LangSmith live tracing authentication/allowance acceptance; do not describe it as verified.
 - [ ] Production/provider hard-stop design before unattended model use.
-- [ ] Demo submission package — explicitly deferred by owner; source notes and recording guide are available.
+- [ ] Demo submission package — explicitly deferred by owner; source notes and recording guide are kept locally.
 
 External-org sign-in/connections/deployment, multi-tenant authorization, Retail, technician scheduling and hosted production delivery are future scope, not remaining tasks for this local demo. Free-form semantic correctness still requires human review. The industry patch guarantees preservation of omitted rules; it does not make every possible natural-language request supported.
 
 ## Verification record
 
-See [latest refinement acceptance](docs/REFINEMENT_ACCEPTANCE.md), [recording guide](docs/PREVIEW_DEMO_RECORDING.md), and submission source (local working-copy reference; not included in this publication). Historical test counts in older ledgers are dated snapshots, not current totals. Current revisions and test results are recorded only after verification.
+See [latest refinement acceptance](docs/REFINEMENT_ACCEPTANCE.md), recording guide (kept locally; excluded from this repository), and submission source (local working-copy reference; not included in this publication). Historical test counts in older ledgers are dated snapshots, not current totals. Current revisions and test results are recorded only after verification.
 
 Latest verified previews: Sales 29 → 30; Service 31 → 32. Active revision remains 1. Backend 135 passed, final targeted regressions 20 passed, frontend 37 passed, production build passed. Service required a clarification; see the acceptance record rather than treating this as a first-attempt success claim.
 

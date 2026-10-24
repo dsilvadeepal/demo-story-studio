@@ -95,7 +95,6 @@ The current tested runtime is local. Replit deployment is being prepared and is 
 
 - [Current product requirements](FOUNDATION_PRD.md)
 - [Current build plan](PROJECT_PLAN.md)
-- [Recording walkthrough and talk track](docs/PREVIEW_DEMO_RECORDING.md)
 - [Refinement acceptance](docs/REFINEMENT_ACCEPTANCE.md)
 
 Built iteratively with Codex: product-directed implementation, local regression testing, live rehearsals and UI review. Production sign-in, connection to individual customer/demo instances and deployment into those instances remain future scope.

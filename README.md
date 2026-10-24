@@ -67,13 +67,15 @@ npm --prefix frontend run build
 
 Backend tests create isolated disposable PostgreSQL databases and roles. Run local setup first; never point test provisioning at a production database.
 
-Latest local verification: **135 backend tests passed**, followed by **20 targeted regressions** after final refinement changes; **37 frontend tests and the production build passed**. These are local results, not hosted acceptance.
+Recorded local verification: **135 backend tests passed**, followed by **20 targeted backend regressions** after refinement changes. The memory-save update passed **39 frontend tests**; subsequent memory UI changes passed **14 targeted frontend tests** and the production build. These are separate test runs, not additive totals or hosted acceptance. See [verification evidence](docs/REFINEMENT_ACCEPTANCE.md) for scope and limitations.
 
 Live preview-only rehearsals verified:
 
 - Sales 29 → 30: only 1,200 opportunity names changed.
 - Service 31 → 32: only eight owner-region labels changed, after clarification.
 - All other rules and both dashboards' aggregate metrics stayed unchanged; baseline revision 1 remained active.
+
+The HVAC naming preference was also saved to Mem0 and retrieved in a fresh Service conversation, which produced preview revision 33 without activation. The UI showed **Saved · Used in this conversation**. This confirms retrieval, not that every generated label followed the preference. See [memory evidence](evals/hvac-memory-acceptance.json).
 
 An earlier initial Sales attempt failed validation safely. Human review remains necessary for semantic realism; successful tests do not guarantee every natural-language request or provider call succeeds.
 
@@ -89,12 +91,13 @@ The baseline is reproducibly generated synthetic data (seed 42, as-of October 21
 
 ## Deployment
 
-The current tested runtime is local. Replit deployment is being prepared and is not yet claimed as verified. Hosting needs persistent PostgreSQL, separate restricted runtime roles, secure owner authentication, secrets and account-specific cost checks. A frontend-only deployment cannot run this application. Local model allowances must not be copied to a second environment as if they were additional credit.
+The current tested runtime is local. The project was imported into Replit, but a working hosted deployment has not been verified. Hosting needs persistent PostgreSQL, separate restricted runtime roles, secure owner authentication, secrets and account-specific cost checks. A frontend-only deployment cannot run this application. Local model allowances must not be copied to a second environment as if they were additional credit.
 
 ## Project documents
 
 - [Current product requirements](FOUNDATION_PRD.md)
-- [Current build plan](PROJECT_PLAN.md)
-- [Refinement acceptance](docs/REFINEMENT_ACCEPTANCE.md)
+- [Verification evidence](docs/REFINEMENT_ACCEPTANCE.md)
+- [Data dictionary](contracts/data-dictionary.md)
+- [Metric decisions](contracts/metric-decisions.md)
 
 Built iteratively with Codex: product-directed implementation, local regression testing, live rehearsals and UI review. Production sign-in, connection to individual customer/demo instances and deployment into those instances remain future scope.

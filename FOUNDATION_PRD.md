@@ -1,6 +1,6 @@
 # Demo Story Studio — current product requirements
 
-Updated October 23, 2026 (America/New_York). This document defines the current product scope.
+Updated October 24, 2026 (America/New_York). This document defines the current product scope.
 
 ## Product outcome
 
@@ -32,7 +32,7 @@ Montréal HVAC is a semantic service-demo adaptation. Existing owners can be des
 | 4 Preview & iterate | Automatically show a successfully created preview and highlight this phase. Expand Review changes for naming rules, representative connected examples and full-dataset checks. Detailed record differences remain optional. |
 | 5 Approve & apply | One explicit owner action states that it replaces the current dataset. Backend still binds approval to the exact hash/revision, then activates atomically. The model cannot perform either action. |
 
-The recording deliberately stops at Preview & iterate. Talk through the final owner action without clicking it.
+Preview and iteration are useful independently of activation; users can inspect a candidate without replacing the active dataset.
 
 ## Refinement contract
 
@@ -65,7 +65,7 @@ A future user could sign in, connect a permitted demo org/instance, adapt an iso
 
 ## Acceptance and evidence
 
-The current [project plan](PROJECT_PLAN.md) tracks implemented work and remaining acceptance. [Refinement verification](docs/REFINEMENT_ACCEPTANCE.md) records the latest local and live checks, revision IDs, failures and limitations. Test results establish bounded local behavior; they do not prove hosted deployment, universal semantic correctness or production integration.
+[Refinement verification](docs/REFINEMENT_ACCEPTANCE.md) records the latest local and live checks, revision IDs, failures and limitations. Test results establish bounded local behavior; they do not prove hosted deployment, universal semantic correctness or production integration.
 
-### Demo memory simplification — October 23, 2026
-Preferences now use Demo memory → Preference → Save preference. The explicit save confirms entered text; exact-hash confirmation and verified remote-save status remain enforced internally. Audience and purpose are optional context. Matching new conversations show Used in this conversation after retrieval; saving does not modify a preview.
+### Demo memory
+Preferences use **Demo memory → Remember for next time → Save preference**. The explicit save confirms the entered wording; exact-hash confirmation and verified remote-save status remain enforced internally. **When to use this** holds audience and purpose. Saved cards show **Saved · Used in this conversation** only when retrieved for that conversation; storage alone shows Saved. **Manage** contains context, editing, ignore and forget controls. Saving does not modify a preview.

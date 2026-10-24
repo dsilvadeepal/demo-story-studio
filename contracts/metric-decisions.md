@@ -1,7 +1,7 @@
 # Metric decisions
 
 - Opportunity money is the sum of quantity × line price; no header amount is invented. Opportunity counts and cycles aggregate at distinct opportunity grain before dimension joins.
-- Source total-sales last-N label says closed date but its expression uses created date. This app deliberately uses close date for total-sales periods; the original expression remains in source-metric-contracts.json.
+- Source total-sales last-N label says closed date but its expression uses created date. This app deliberately uses close date for total-sales periods; this is an intentional semantic correction rather than exact replication of the source expression.
 - Sales trend uses created-date cohorts and ignores the Executive close-date filter as captured. Pipeline charts exclude created-date publishers where recorded; effective period exclusions are shown per component.
 - Win rate is won/all count; conversion is won/closed money. Empty denominator is null.
 - Product breakdown money uses matching lines; distinct opportunity counts can overlap and must not be summed.

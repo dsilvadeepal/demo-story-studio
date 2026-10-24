@@ -1,4 +1,6 @@
-# Refinement reliability acceptance — October 23, 2026
+# Refinement and memory verification
+
+Updated October 24, 2026. Refinement results below were recorded October 23; later memory checks are listed separately.
 
 ## Verified outcome
 
@@ -21,7 +23,7 @@ Browser checks confirmed the correct adapted page titles, preview revision, Prev
 
 ## Failures retained, not hidden
 
-The first Sales attempt using the older brief failed initial validation (duplicate targets, followed by generic titles). It created no preview. The revised explicit-title brief in the recording guide succeeded; its opportunity refinement succeeded in one model call.
+The first Sales attempt using the older brief failed initial validation (duplicate targets, followed by generic titles). It created no preview. The revised brief with explicit page titles succeeded; its opportunity refinement succeeded in one model call.
 
 Service initially returned a patch whose request quote also included Keep/Preserve sentences. The server rejected it. The model then asked which original division should map to Montréal Centre. Answering “Change Central region to Montréal Centre.” succeeded; the refinement used three model calls including the rejected patch and clarification. Instructions now explicitly require only the change sentence and allow either original source or current target labels. This prompt improvement is not a claim that every future call will avoid clarification.
 
@@ -39,8 +41,19 @@ The Sales live checkpoint exposed reused tool-message IDs after counter reset. T
 
 ## Practical limits
 
-This is tested bounded refinement, not a universal natural-language correctness guarantee. Use exact existing-label → replacement wording for the recording. Unsupported mapping additions and vague semantic changes can require a fresh brief or clarification. Numeric refinements still use the earlier proposal path. Previous-preview comparison UI state is not reconstructed after a reload; saved revision data persists. Full keyboard/screen-reader/mobile accessibility and unattended provider hard stops remain unverified.
+This is tested bounded refinement, not a universal natural-language correctness guarantee. Use exact existing-label → replacement wording. Unsupported mapping additions and vague semantic changes can require a fresh brief or clarification. Numeric refinements still use the earlier proposal path. Previous-preview comparison UI state is not reconstructed after a reload; saved revision data persists. Full keyboard/screen-reader/mobile accessibility and unattended provider hard stops remain unverified.
 
-For the demo, stop at Preview & iterate. The recording guide is kept locally and excluded from this repository. External production-instance connection/deployment remains future scope.
+External production-instance connection/deployment remains future scope.
 
-Test session ended with the Nebius gate closed and $0.9416784 remaining in the original monitored allowance. Viewing retained previews remains available.
+At the end of that historical refinement session, the Nebius gate was closed with $0.9416784 remaining. The owner subsequently reopened it for recording/testing. This historical amount is not a current balance; live allowance and gate state are runtime settings, not repository configuration.
+
+
+## Later memory verification — October 23–24, 2026
+
+- Saved the exact HVAC terminology preference through the one-click Save preference flow, retaining internal exact-text confirmation and remote verification.
+- Started a fresh Service conversation without repeating the preference. Mem0 retrieval populated the conversation memory IDs; the UI showed **Saved · Used in this conversation**. Preview revision 33 was created and not applied. See [recorded evidence](../evals/hvac-memory-acceptance.json).
+- Prior [Mem0 lifecycle evidence](../evals/phase2-mem0-live-results.json) covers save, recall, update, deletion and successful recipes; these are historical tests, separate from the HVAC run.
+- The save-flow update passed 39 frontend tests. Subsequent changes passed 14 targeted frontend tests, including an added confirmation-order integration check; the production build passed. Counts refer to distinct runs, not additive totals.
+- Final Service browser checks verified the compact saved card, matching audience/purpose controls, collapsed Manage controls and the retrieved-preference status. This final UI check did not repeat the paid generation or create duplicate memories.
+
+The retrieval indicator proves that guidance was supplied to the conversation. It does not prove that every output followed it; semantic review remains necessary. Provider overages were disabled when Mem0 was re-enabled; runtime allowances are bounded and must be checked independently for future tests.

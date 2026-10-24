@@ -66,3 +66,6 @@ A future user could sign in, connect a permitted demo org/instance, adapt an iso
 ## Acceptance and evidence
 
 The current [project plan](PROJECT_PLAN.md) tracks implemented work and remaining acceptance. [Refinement verification](docs/REFINEMENT_ACCEPTANCE.md) records the latest local and live checks, revision IDs, failures and limitations. Test results establish bounded local behavior; they do not prove hosted deployment, universal semantic correctness or production integration.
+
+### Demo memory simplification — October 23, 2026
+Preferences now use Demo memory → Preference → Save preference. The explicit save confirms entered text; exact-hash confirmation and verified remote-save status remain enforced internally. Audience and purpose are optional context. Matching new conversations show Used in this conversation after retrieval; saving does not modify a preview.

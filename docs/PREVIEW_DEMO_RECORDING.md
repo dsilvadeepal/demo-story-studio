@@ -102,9 +102,9 @@ Do not promise eight changed labels unless the displayed result confirms that co
 
 #### 7. Memory — explain what persists · about 25 seconds
 
-**Now expand:** **Saved preferences, recipes and conversation memory**. Stay on that panel; do not save a new memory during this take.
+**Now expand:** **Demo memory**. Show the saved HVAC naming preference and, on the verified new conversation, its **Used in this conversation** label. Do not create another copy.
 
-**Say:** “PostgreSQL checkpoints retain the conversation and workflow state. Mem0 is a separate layer for explicitly confirmed preferences and successful recipes across sessions. It does not own the business records or approve changes. Its lifecycle was tested separately; I’m explaining that capability here, not demonstrating a fresh memory save.”
+**Say:** “The app remembers where I am in this task, so I can continue later. I also saved a preference to use customer-friendly HVAC terminology. Here, ‘Used in this conversation’ shows it was retrieved for this new demo. I still review and approve the changes.”
 
 **Then:** collapse the panel.
 
@@ -138,7 +138,7 @@ Do not promise eight changed labels unless the displayed result confirms that co
 | Local traces and evaluations | Recorded tool/cost evidence and local test results. LangSmith live tracing remains unverified and is disabled; do not present it as the observed tracing system. |
 | Codex | AI coding collaborator used for implementation, UI revisions, tests and debugging. You supplied product direction, reviewed behavior and chose the scope. |
 
-**Memory demonstration boundary:** At this guide update the external Mem0 gate is disabled; explaining the implemented memory design is accurate, but do not claim the current Sales/Service preview retrieved a helpful preference or demonstrate a fresh Mem0 save as if it were available. Previously verified lifecycle evidence is in `evals/phase2-mem0-live-results.json`. If you show that evidence, label it as a prior test.
+**Memory demonstration boundary:** Mem0 was re-enabled after verifying remaining allowance and disabled provider overages. The app has a bounded allowance of 20 writes and 50 reads, expiring before the November 21 renewal. Save only guidance you want to reuse. To demonstrate saving: expand **Demo memory**, enter `For HVAC demos, use customer-friendly HVAC terminology instead of internal technical codes.` in **Preference**, then click **Save preference**. This confirms your entered wording; wait for **Saved**. Audience and purpose are under **Optional context**. Start a new Service customization with the same context and look for **Used in this conversation**. Saving does not alter the existing preview. If the preference already exists, show it instead of creating a duplicate.
 
 ### Actual coding prompts you can show in Codex
 
@@ -188,3 +188,5 @@ Open http://127.0.0.1:8010/. AI is enabled at the owner’s request until they a
 ## If a live attempt fails
 
 Do not narrate it as successful. Say: “The request stopped safely and current data is unchanged. I can clarify the wording or use the saved preview to continue reviewing.” Do not automatically retry an unknown-cost timeout. Exact titles and explicit mappings reduce ambiguity but cannot guarantee every provider call succeeds.
+
+Live memory check: saved the HVAC naming preference through the simplified UI, then started a fresh Service conversation without repeating it. The card showed Saved and Used in this conversation; preview revision 33 was created and not applied. Evidence: `evals/hvac-memory-acceptance.json`.

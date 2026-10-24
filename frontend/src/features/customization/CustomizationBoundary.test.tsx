@@ -2,9 +2,9 @@ import {useState,useEffect} from 'react';
 import {it,expect,vi,afterEach} from 'vitest';
 import {render,screen,fireEvent,cleanup,waitFor} from '@testing-library/react';
 import {CustomizationBoundary} from './CustomizationBoundary';
-import {scenarios,runs} from './api';
+import {scenarios,runs,memories} from './api';
 import {api} from '../../shared/api';
-vi.mock('./api',()=>({scenarios:{history:vi.fn(),compare:vi.fn(),diff:vi.fn(),review:vi.fn(),approve:vi.fn(),apply:vi.fn()},runs:{get:vi.fn(),start:vi.fn(),resume:vi.fn()},memories:{list:vi.fn().mockResolvedValue([])}}));
+vi.mock('./api',()=>({scenarios:{history:vi.fn(),compare:vi.fn(),diff:vi.fn(),review:vi.fn(),approve:vi.fn(),apply:vi.fn()},runs:{get:vi.fn(),start:vi.fn(),resume:vi.fn()},memories:{list:vi.fn().mockResolvedValue([]),propose:vi.fn(),confirm:vi.fn(),save:vi.fn()}}));
 vi.mock('../../shared/api',()=>({api:vi.fn()}));
 function Evidence({manifest,catalog}:any){const [page,setPage]=useState('Executive');return <><button onClick={()=>setPage('Pipeline')}>Choose pipeline</button><p>{page} page</p><p data-testid="dataset">{manifest.id} / {catalog.options.sales.stage[0]}</p></>}
 const active={id:'base',as_of_date:'2026-10-21',revision:1,semantic_version:'1.0.0' as const,counts:{}};
@@ -142,5 +142,20 @@ it('shows a refinement clarification inside the drawer and resumes the same run'
  fireEvent.change(input,{target:{value:'Change region Central to Montréal Centre.'}});
  fireEvent.click(screen.getByRole('button',{name:'Continue with clarification'}));
  await waitFor(()=>expect(runs.resume).toHaveBeenLastCalledWith(expect.objectContaining({id:'run'}),'clarify','Change region Central to Montréal Centre.'));
+ expect(scenarios.apply).not.toHaveBeenCalled();
+});
+
+it('saves the exact entered preference through confirmation before remote save',async()=>{
+ setupReview();const item={id:'preference',content_hash:'exact-text-hash',status:'proposed'} as any;
+ vi.mocked(memories.propose).mockResolvedValue(item);vi.mocked(memories.confirm).mockResolvedValue({...item,status:'confirmed'});vi.mocked(memories.save).mockResolvedValue({...item,status:'saved'});
+ render(<CustomizationBoundary domain="sales" active={active} catalog={catalog} onActivated={async()=>{}}>{()=>null}</CustomizationBoundary>);
+ fireEvent.click(screen.getByText('Demo memory'));
+ fireEvent.change(screen.getByLabelText('Preference',{exact:true}),{target:{value:'Use customer-friendly HVAC terminology.'}});
+ fireEvent.click(screen.getByRole('button',{name:'Save preference',exact:true}));
+ await waitFor(()=>expect(memories.save).toHaveBeenCalledWith('preference'));
+ expect(memories.confirm).toHaveBeenCalledWith(item);
+ expect(vi.mocked(memories.propose).mock.calls[0][0].text).toBe('Use customer-friendly HVAC terminology.');
+ expect(vi.mocked(memories.confirm).mock.invocationCallOrder[0]).toBeLessThan(vi.mocked(memories.save).mock.invocationCallOrder[0]);
+ expect(await screen.findByText(/Saved. Start a new customization/)).toBeTruthy();
  expect(scenarios.apply).not.toHaveBeenCalled();
 });

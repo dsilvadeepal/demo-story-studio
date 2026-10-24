@@ -1,0 +1,11 @@
+{
+  "scenario": "HVAC naming preference",
+  "save_verified": true,
+  "fresh_conversation_retrieved": true,
+  "run_id": "5a68972f-276e-452a-aeda-11953811a6ed",
+  "status": "paused",
+  "preview_revision": 33,
+  "applied": false,
+  "ui_flow": "Demo memory > Preference > Save preference",
+  "verified_via": "Browser Saved and Used in this conversation states"
+}

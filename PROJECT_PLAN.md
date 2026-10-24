@@ -44,3 +44,6 @@ See [latest refinement acceptance](docs/REFINEMENT_ACCEPTANCE.md), [recording gu
 Latest verified previews: Sales 29 → 30; Service 31 → 32. Active revision remains 1. Backend 135 passed, final targeted regressions 20 passed, frontend 37 passed, production build passed. Service required a clarification; see the acceptance record rather than treating this as a first-attempt success claim.
 
 Owner recording-session update: AI remains enabled until the owner asks to close it, subject to the existing cumulative allowance/cap and safety stops. The recording guide was checked against the current Week 3 handout and includes timed narration, actual coding prompts, model/tool/state/memory explanations and exact app inputs.
+
+### Demo memory update — October 23, 2026
+- [x] Preferences now use Demo memory → Preference → Save preference. The explicit save confirms entered text; exact-hash confirmation and verified remote-save status remain enforced internally. Audience and purpose are optional context. Matching new conversations show Used in this conversation after retrieval; saving does not modify a preview.

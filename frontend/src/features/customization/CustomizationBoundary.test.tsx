@@ -151,11 +151,11 @@ it('saves the exact entered preference through confirmation before remote save',
  render(<CustomizationBoundary domain="sales" active={active} catalog={catalog} onActivated={async()=>{}}>{()=>null}</CustomizationBoundary>);
  fireEvent.click(screen.getByText('Demo memory'));
  fireEvent.change(screen.getByLabelText('Preference',{exact:true}),{target:{value:'Use customer-friendly HVAC terminology.'}});
- fireEvent.click(screen.getByRole('button',{name:'Save preference',exact:true}));
+ fireEvent.click(screen.getByRole('button',{name:'Save preference'}));
  await waitFor(()=>expect(memories.save).toHaveBeenCalledWith('preference'));
  expect(memories.confirm).toHaveBeenCalledWith(item);
  expect(vi.mocked(memories.propose).mock.calls[0][0].text).toBe('Use customer-friendly HVAC terminology.');
  expect(vi.mocked(memories.confirm).mock.invocationCallOrder[0]).toBeLessThan(vi.mocked(memories.save).mock.invocationCallOrder[0]);
- expect(await screen.findByText(/Saved. Start a new customization/)).toBeTruthy();
+ expect(await screen.findByText(/Saved for future demos/)).toBeTruthy();
  expect(scenarios.apply).not.toHaveBeenCalled();
 });

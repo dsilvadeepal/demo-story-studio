@@ -10,7 +10,7 @@ it('requires explicit save and shows success only after verified completion',asy
  fireEvent.change(screen.getByLabelText('Preference'),{target:{value:text}});expect(save).not.toHaveBeenCalled();
  fireEvent.click(screen.getByRole('button',{name:'Save preference'}));expect(save).toHaveBeenCalledWith(text);
  expect(screen.queryByRole('status')).toBeNull();expect((screen.getByRole('button',{name:'Saving…'}) as HTMLButtonElement).disabled).toBe(true);
- finish(true);await waitFor(()=>expect(screen.getByRole('status').textContent).toContain('Saved.'));
+ finish(true);await waitFor(()=>expect(screen.getByRole('status').textContent).toContain('Saved for future demos.'));
  expect((screen.getByLabelText('Preference') as HTMLTextAreaElement).value).toBe('');
 });
 it('retains wording and does not claim success on an unverified save',async()=>{

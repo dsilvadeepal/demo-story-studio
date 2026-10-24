@@ -100,13 +100,21 @@ Change Central region to Montréal Centre.
 
 Do not promise eight changed labels unless the displayed result confirms that count. If the result differs from the intended patch, review it honestly rather than narrating success.
 
-#### 7. Memory — explain what persists · about 25 seconds
+#### 7. Memory — show what the agent remembered · about 25 seconds
 
-**Now expand:** **Demo memory**. Show the saved HVAC naming preference and, on the verified new conversation, its **Used in this conversation** label. Do not create another copy.
+**Click:** **Demo memory** to expand it. Keep the saved HVAC preference visible; leave **Manage** closed.
 
-**Say:** “The app remembers where I am in this task, so I can continue later. I also saved a preference to use customer-friendly HVAC terminology. Here, ‘Used in this conversation’ shows it was retrieved for this new demo. I still review and approve the changes.”
+**Point to the saved wording and say:** “I previously saved a preference to use customer-friendly HVAC terminology instead of internal technical codes.”
 
-**Then:** collapse the panel.
+**Point to `Saved · Used in this conversation` and say:** “This shows the agent retrieved that preference for this conversation. Mem0 lets me carry useful preferences into future demos without repeating them. I still review the proposed changes.”
+
+**Point to `Remember for next time` and say:** “To add another preference, I’d type it here and click Save preference.” **Do not type or save a duplicate during this take.**
+
+**Then click:** **Demo memory** to collapse it and continue to the build explanation.
+
+**Evidence check:** Say the preference was used only when the card displays **Used in this conversation**. **Saved** alone confirms storage, not retrieval. The badge shows that the guidance was supplied to the agent; it does not prove every generated label followed it. The verified fresh Service conversation created preview revision 33. Selecting an older preview does not change which conversation the memory badge describes.
+
+**If you want to demonstrate the save live in a separate take:** before starting the new Service brief, open **Demo memory**, type the preference into **Remember for next time**, and click **Save preference**. Wait for **Saved**, then start a new customization using the Service brief in step 3. Use the same audience and purpose (the defaults are general / demo preparation). After generation, return here and show **Saved · Used in this conversation**. Only do this if that preference is not already saved.
 
 #### 8. Build process — briefly show Codex · about 30 seconds
 
@@ -138,7 +146,7 @@ Do not promise eight changed labels unless the displayed result confirms that co
 | Local traces and evaluations | Recorded tool/cost evidence and local test results. LangSmith live tracing remains unverified and is disabled; do not present it as the observed tracing system. |
 | Codex | AI coding collaborator used for implementation, UI revisions, tests and debugging. You supplied product direction, reviewed behavior and chose the scope. |
 
-**Memory demonstration boundary:** Mem0 was re-enabled after verifying remaining allowance and disabled provider overages. The app has a bounded allowance of 20 writes and 50 reads, expiring before the November 21 renewal. Save only guidance you want to reuse. To demonstrate saving: expand **Demo memory**, enter `For HVAC demos, use customer-friendly HVAC terminology instead of internal technical codes.` in **Remember for next time**, then click **Save preference**. This confirms your entered wording; wait for **Saved**. Audience and purpose are under **When to use this**. Start a new Service customization with the same context and look for **Used in this conversation**. Saving does not alter the existing preview. If the preference already exists, show it instead of creating a duplicate.
+**Memory demonstration boundary:** Mem0 was re-enabled after verifying remaining allowance and disabled provider overages. The app was granted a bounded allowance of 20 writes and 50 reads, expiring before the November 21 renewal; those are initial limits, not the remaining balance. Save only guidance you want to reuse. To demonstrate saving: expand **Demo memory**, enter `For HVAC demos, use customer-friendly HVAC terminology instead of internal technical codes.` in **Remember for next time**, then click **Save preference**. This confirms your entered wording; wait for **Saved**. Audience and purpose are under **When to use this**. Start a new Service customization with the same context and look for **Used in this conversation**. Saving does not alter the existing preview. If the preference already exists, show it instead of creating a duplicate.
 
 ### Actual coding prompts you can show in Codex
 
